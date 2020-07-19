@@ -6,7 +6,7 @@ tynydraw (under construction)
 ```javascript
 // 描画スクリプトのサンプル
 setParams(50, 50);
-setGrid(3, 3);
+setGrid(4, 4);
 setBgColor("white");
 setFgColor("red");
 fillGridSquare(0, 0, 2, 2);
