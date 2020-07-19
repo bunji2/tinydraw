@@ -1,6 +1,8 @@
 # tinydraw
 tynydraw (under construction)
 
+----
+
 ```javascript
 // 描画スクリプトのサンプル
 setParams(50, 50);
@@ -30,3 +32,5 @@ drawText(125, 130, "c");
 
 saveFile("sample1.png");
 ```
+
+![sample1.png](sample1.png)
