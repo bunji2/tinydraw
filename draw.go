@@ -79,7 +79,7 @@ func NewDraw(w, h int) (d *Data) {
 		bgColor: white,
 		fgColor: black,
 	}
-	d.rgb = image.NewRGBA(image.Rect(0, 0, d.width*gridWidth+margin*2, d.height*gridHeight+margin*2))
+	d.rgb = image.NewRGBA(image.Rect(0, 0, (d.width-1)*gridWidth+margin*2, (d.height-1)*gridHeight+margin*2))
 	d.fillAll(d.bgColor)
 	return
 }
@@ -94,11 +94,11 @@ func (d *Data) saveFile(outFile string) {
 }
 
 func (d *Data) drawGridSquares() {
-	for x := 0; x <= d.width; x++ {
-		d.drawGridLine(x, 0, x, d.height)
+	for x := 0; x < d.width; x++ {
+		d.drawGridLine(x, 0, x, d.height-1)
 	}
-	for y := 0; y <= d.height; y++ {
-		d.drawGridLine(0, y, d.width, y)
+	for y := 0; y < d.height; y++ {
+		d.drawGridLine(0, y, d.width-1, y)
 	}
 }
 
