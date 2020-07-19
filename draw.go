@@ -39,9 +39,6 @@ type Data struct {
 	rgb         *image.RGBA
 }
 
-// Color は色オブジェクトの型
-type Color [3]uint8
-
 // NewColor 色のオブジェクトを生成する
 func NewColor(r, g, b uint8) (c color.Color) {
 	c = color.RGBA{r, g, b, 0xFF}
@@ -95,16 +92,6 @@ func (d *Data) saveFile(outFile string) {
 	defer w.Close()
 	png.Encode(w, d.rgb)
 }
-
-/*
-func (d *Data) setGridVisible(v bool) {
-	d.gridVisible = v
-	d.fillAll(d.bgColor)
-	if v {
-		d.drawGrid()
-	}
-}
-*/
 
 func (d *Data) drawGridSquares() {
 	for x := 0; x <= d.width; x++ {
